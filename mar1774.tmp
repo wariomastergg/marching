@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsvc42tax8dkb"]
+
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="1_ncqkm"]
+[ext_resource type="Shader" path="res://marching.gdshader" id="1_tbvrl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_piuku"]
+shader = ExtResource("1_tbvrl")
+shader_parameter/pt = Vector3(3.803, 0.805, 5.791)
+shader_parameter/a = Vector2(6.29, -63.08)
+shader_parameter/ci = Vector3(0.91, 2.165, -0.39)
+shader_parameter/si = 1.435
+shader_parameter/cb = Vector3(0.705, -0.235, -0.13)
+shader_parameter/cbsi = Vector3(0.81, 0.855, 0.95)
+
+[node name="Node2D" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_ncqkm")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_piuku")
+anchors_preset = -1
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)

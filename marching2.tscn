@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://2hx5vjsmdpdy"]
+
+[ext_resource type="Script" path="res://CanvasLayer2.gd" id="1_5mh3e"]
+[ext_resource type="Shader" path="res://marching progress/marching2_texture4.gdshader" id="2_hee4o"]
+[ext_resource type="Texture2D" uid="uid://fnatb3pi4goj" path="res://grass_block_top.png" id="3_5rl0h"]
+[ext_resource type="Texture2D" uid="uid://024ocrrofsdd" path="res://grass_block_side.png" id="4_cahxa"]
+[ext_resource type="Texture2D" uid="uid://dg77kl8knhnru" path="res://side1.png" id="5_bwlel"]
+[ext_resource type="Texture2D" uid="uid://c2wmdkvjaj8wc" path="res://dirt.png" id="6_qb7s4"]
+[ext_resource type="Script" path="res://ColorRect.gd" id="7_g060i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ltlo4"]
+shader = ExtResource("2_hee4o")
+shader_parameter/wi = 2.0
+shader_parameter/hi = 2.0
+shader_parameter/pt = Vector3(2.8, 2.995, 8.285)
+shader_parameter/a = Vector2(-12.58, 23.53)
+shader_parameter/ci = Vector3(0, 0.335, 0)
+shader_parameter/si = 1.65
+shader_parameter/cb = Vector3(0, -0.04, 0)
+shader_parameter/cbsi = Vector3(1, 1, 1)
+shader_parameter/mv = 7.86
+shader_parameter/gt = 0.38
+shader_parameter/gt1 = 0.67
+shader_parameter/gt2 = 0.0
+shader_parameter/img = ExtResource("3_5rl0h")
+shader_parameter/img2 = ExtResource("4_cahxa")
+shader_parameter/img3 = ExtResource("5_bwlel")
+shader_parameter/img4 = ExtResource("6_qb7s4")
+
+[node name="Node2D" type="Node"]
+metadata/_edit_horizontal_guides_ = [-1.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_5mh3e")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ltlo4")
+offset_left = -1.0
+offset_right = 1151.0
+offset_bottom = 597.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("7_g060i")
